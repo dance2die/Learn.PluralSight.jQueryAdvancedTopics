@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+    $(function() {
+        $.fn.everyThird = function () {
+            var arr = [];
+            $.each(this, function(idx, item) {
+                if (idx % 3 == 0)
+                    arr.push(item);
+            });
+
+            return this.pushStack(arr, "everyThird", "");
+        };
+
+        $('#clickme').click(function () {
+           $('div').everyThird().css('color', 'Red').end().css('font-weight', 'bold');
+        });
+    });
+</script>
+
+<input id="clickme" type="button" value="click me" />
+
+<div id="out1">1</div>
+<div id="out2">2</div>
+<div id="out3">3</div>
+<div id="out4">4</div>
+<div id="out5">5</div>
+<div id="out6">6</div>
+<div id="out7">7</div>
+
+</body>
+</html>
