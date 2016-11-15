@@ -6,27 +6,13 @@
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
+
+    <script src="log.js"></script>
+
 </head>
 <body>
 
 <script type="text/javascript">
-    (function($) {
-        $.log = function(value) {
-            if (console)
-                console.log(value);
-        };
-
-        $.log.group = function(value) {
-            if (console && console.group)
-                console.group(value);
-        };
-
-        $.log.groupEnd = function() {
-            if (console && console.group)
-                console.groupEnd();
-        };
-    })(jQuery);
-
     $(function() {
         $.log.group('my group');
         $.log('hi there');
